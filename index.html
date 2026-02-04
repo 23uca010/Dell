@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainable Swap | Sustainable Fashion Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #2E8B57;
+            --light-green: #E8F5E9;
+            --neutral-beige: #F5F5DC;
+            --white: #FFFFFF;
+            --dark-gray: #333333;
+            --light-gray: #777777;
+            --accent-coral: #FF7F50;
+            --donation-red: #FF6B6B;
+            --ngo-purple: #9B59B6;
+            --impact-gold: #FFD700;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+
+        .nav-links a.active {
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+
+        .nav-icon {
+            font-size: 1.1rem;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-bar {
+            position: relative;
+        }
+
+        .search-bar input {
+            padding: 10px 15px 10px 40px;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            width: 250px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 2px rgba(46, 139, 87, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--light-gray);
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .action-btn {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            cursor: pointer;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .action-btn:hover {
+            color: var(--primary-green);
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: var(--accent-coral);
+            color: white;
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark-gray);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(46, 139, 87, 0.9), rgba(46, 139, 87, 0.7)), url('https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--white);
+            color: var(--primary-green);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-donate {
+            background-color: var(--donation-red);
+            color: white;
+        }
+
+        .btn-donate:hover {
+            background-color: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.2);
+        }
+
+        /* How It Works */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--light-gray);
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .how-it-works {
+            background-color: var(--light-green);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 992px) {
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .step-card {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .step-icon {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .step-number {
+            display: inline-block;
+            background-color: var(--primary-green);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            line-height: 36px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .step-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+        }
+
+        .step-card p {
+            color: var(--light-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Featured Listings */
+        .listings-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .filter-options {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            background-color: var(--white);
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary-green);
+            color: var(--primary-green);
+        }
+
+        .filter-btn.active {
+            background-color: var(--primary-green);
+            color: white;
+            border-color: var(--primary-green);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        @media (max-width: 1200px) {
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+            z-index: 2;
+        }
+
+        .badge-swap {
+            background-color: var(--primary-green);
+        }
+
+        .badge-buy {
+            background-color: var(--accent-coral);
+        }
+
+        .badge-donate {
+            background-color: var(--donation-red);
+        }
+
+        .product-image {
+            height: 220px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .product-price {
+            color: var(--primary-green);
+            font-weight: 700;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--light-gray);
+            margin-bottom: 15px;
+        }
+
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        .action-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--light-green);
+            color: var(--primary-green);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .action-icon:hover {
+            background-color: var(--primary-green);
+            color: white;
+        }
+
+        .donate-icon {
+            background-color: rgba(255, 107, 107, 0.1);
+            color: var(--donation-red);
+        }
+
+        .donate-icon:hover {
+            background-color: var(--donation-red);
+            color: white;
+        }
+
+        /* Donation Section */
+        .donation-section {
+            background-color: var(--light-green);
+        }
+
+        .donation-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .donation-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .donation-step {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .donation-icon {
+            font-size: 2.5rem;
+            color: var(--donation-red);
+            margin-bottom: 20px;
+        }
+
+        .ngo-map {
+            height: 300px;
+            background-color: #f0f0f0;
+            border-radius: var(--radius);
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-gray);
+            font-weight: 600;
+        }
+
+        /* Impact Section */
+        .impact-section {
+            background-color: var(--neutral-beige);
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .impact-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .impact-card {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .impact-icon {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .impact-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 992px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .footer-about p {
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        .footer-heading {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-green);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background-color: var(--primary-green);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Navigation */
+        @media (max-width: 992px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links, .search-bar {
+                display: none;
+            }
+            
+            .mobile-nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: var(--white);
+                z-index: 2000;
+                padding: 30px;
+                transform: translateX(-100%);
+                transition: var(--transition);
+            }
+            
+            .mobile-nav.active {
+                transform: translateX(0);
+            }
+            
+            .mobile-nav-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 40px;
+            }
+            
+            .mobile-nav-links {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .mobile-nav-links a {
+                text-decoration: none;
+                color: var(--dark-gray);
+                font-size: 1.2rem;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                padding: 15px 0;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .close-menu {
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                color: var(--dark-gray);
+                cursor: pointer;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+        
+        .mt-1 { margin-top: 10px; }
+        .mt-2 { margin-top: 20px; }
+        .mt-3 { margin-top: 30px; }
+        .mt-4 { margin-top: 40px; }
+        .mb-1 { margin-bottom: 10px; }
+        .mb-2 { margin-bottom: 20px; }
+        .mb-3 { margin-bottom: 30px; }
+        .mb-4 { margin-bottom: 40px; }
+        
+        .view-all {
+            display: inline-block;
+            margin-top: 40px;
+            color: var(--primary-green);
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-recycle logo-icon"></i>
+                Sustainable Swap
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#" class="active"><i class="fas fa-home nav-icon"></i> Home</a>
+                <a href="#"><i class="fas fa-shopping-bag nav-icon"></i> Shop</a>
+                <a href="#"><i class="fas fa-exchange-alt nav-icon"></i> Swap</a>
+                <a href="#"><i class="fas fa-heart nav-icon"></i> Donate</a>
+                <a href="#"><i class="fas fa-user nav-icon"></i> Profile</a>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="search-bar">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Search for items, brands, or categories...">
+                </div>
+                
+                <div class="user-actions">
+                    <button class="action-btn">
+                        <i class="far fa-heart"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="notification-badge">2</span>
+                    </button>
+                    <button class="action-btn">
+                        <i class="far fa-bell"></i>
+                        <span class="notification-badge">5</span>
+                    </button>
+                    <button class="action-btn">
+                        <i class="far fa-user"></i>
+                    </button>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <a href="#" class="logo">
+                <i class="fas fa-recycle logo-icon"></i>
+                Sustainable Swap
+            </a>
+            <button class="close-menu" id="closeMenuBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="mobile-nav-links">
+            <a href="#"><i class="fas fa-home"></i> Home</a>
+            <a href="#"><i class="fas fa-shopping-bag"></i> Shop</a>
+            <a href="#"><i class="fas fa-exchange-alt"></i> Swap</a>
+            <a href="#"><i class="fas fa-heart"></i> Donate</a>
+            <a href="#"><i class="fas fa-user"></i> Profile</a>
+            <a href="#"><i class="fas fa-cog"></i> Settings</a>
+            <a href="#"><i class="fas fa-question-circle"></i> Help</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Redefine Fashion. Reduce Waste.</h1>
+            <p>Swap, buy, sell, or donate pre-loved clothing in a sustainable fashion community. Give your wardrobe a second life while reducing environmental impact.</p>
+            
+            <div class="cta-buttons">
+                <button class="btn btn-primary">
+                    <i class="fas fa-exchange-alt"></i> Start Swapping
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-search"></i> Browse Items
+                </button>
+                <button class="btn btn-donate">
+                    <i class="fas fa-heart"></i> Donate Now
+                </button>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">2,450</div>
+                    <div class="stat-label">Items Saved from Landfills</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1,820</div>
+                    <div class="stat-label">Successful Swaps</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">560</div>
+                    <div class="stat-label">Donations to NGOs</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section-padding how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Join our sustainable fashion community in just a few simple steps</p>
+            
+            <div class="process-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon"><i class="fas fa-tshirt"></i></div>
+                    <h3>List Your Items</h3>
+                    <p>Upload photos and details of clothes you want to swap, sell, or donate.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon"><i class="fas fa-search"></i></div>
+                    <h3>Browse & Match</h3>
+                    <p>Discover items from other users or find NGOs that need donations.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon"><i class="fas fa-exchange-alt"></i></div>
+                    <h3>Swap or Buy</h3>
+                    <p>Initiate a swap, make a purchase, or schedule a donation.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Track Impact</h3>
+                    <p>See the environmental impact of your sustainable fashion choices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Listings -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="listings-header">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 0;">Featured Listings</h2>
+                
+                <div class="filter-options">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Swap</button>
+                    <button class="filter-btn">Buy</button>
+                    <button class="filter-btn">Donate</button>
+                    <button class="filter-btn">New Arrivals</button>
+                </div>
+            </div>
+            
+            <div class="product-grid">
+                <!-- Product Card 1 -->
+                <div class="product-card">
+                    <div class="product-badge badge-swap">Swap</div>
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Denim Jacket" class="product-image">
+                    <div class="product-info">
+                        <div class="product-title">
+                            <span>Vintage Denim Jacket</span>
+                            <span class="product-price">$45</span>
+                        </div>
+                        <div class="product-meta">
+                            <span>Size: M</span>
+                            <span>Condition: Good</span>
+                        </div>
+                        <p>Classic denim jacket with slight distressing. Perfect for layering.</p>
+                        <div class="product-actions">
+                            <div class="action-icon">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <div class="action-icon">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="action-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <div class="product-badge badge-buy">Buy</div>
+                    <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80" alt="Summer Dress" class="product-image">
+                    <div class="product-info">
+                        <div class="product-title">
+                            <span>Floral Summer Dress</span>
+                            <span class="product-price">$32</span>
+                        </div>
+                        <div class="product-meta">
+                            <span>Size: S</span>
+                            <span>Condition: Like New</span>
+                        </div>
+                        <p>Lightweight floral dress perfect for summer. Worn only once.</p>
+                        <div class="product-actions">
+                            <div class="action-icon">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <div class="action-icon">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="action-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 3 -->
+                <div class="product-card">
+                    <div class="product-badge badge-donate">Donate</div>
+                    <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Winter Coat" class="product-image">
+                    <div class="product-info">
+                        <div class="product-title">
+                            <span>Winter Wool Coat</span>
+                            <span class="product-price">Donate</span>
+                        </div>
+                        <div class="product-meta">
+                            <span>Size: L</span>
+                            <span>Condition: Good</span>
+                        </div>
+                        <p>Warm wool coat. Donating to local shelter for winter drive.</p>
+                        <div class="product-actions">
+                            <div class="action-icon">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <div class="action-icon donate-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="action-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 4 -->
+                <div class="product-card">
+                    <div class="product-badge badge-swap">Swap</div>
+                    <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Sneakers" class="product-image">
+                    <div class="product-info">
+                        <div class="product-title">
+                            <span>White Canvas Sneakers</span>
+                            <span class="product-price">Swap</span>
+                        </div>
+                        <div class="product-meta">
+                            <span>Size: 9</span>
+                            <span>Condition: Good</span>
+                        </div>
+                        <p>Minimal white sneakers, lightly worn. Looking for boots in exchange.</p>
+                        <div class="product-actions">
+                            <div class="action-icon">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <div class="action-icon">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="action-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#" class="view-all">
+                View All Listings <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section class="section-padding donation-section">
+        <div class="container">
+            <h2 class="section-title">Donate to NGOs Near You</h2>
+            <p class="section-subtitle">Give your pre-loved clothes directly to verified local organizations making a difference</p>
+            
+            <div class="donation-steps">
+                <div class="donation-step">
+                    <div class="donation-icon"><i class="fas fa-tshirt"></i></div>
+                    <h3>Select Items</h3>
+                    <p>Choose items from your wardrobe that you'd like to donate to those in need.</p>
+                </div>
+                
+                <div class="donation-step">
+                    <div class="donation-icon"><i class="fas fa-hands-helping"></i></div>
+                    <h3>Pick an NGO</h3>
+                    <p>Browse verified local organizations and see what items they currently need.</p>
+                </div>
+                
+                <div class="donation-step">
+                    <div class="donation-icon"><i class="fas fa-truck"></i></div>
+                    <h3>Schedule Pickup</h3>
+                    <p>Choose a convenient time for pickup or find drop-off locations near you.</p>
+                </div>
+            </div>
+            
+            <div class="ngo-map mt-4">
+                <div>
+                    <i class="fas fa-map-marked-alt" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                    <p>Interactive map showing NGOs near you</p>
+                    <button class="btn btn-donate mt-2">Find NGOs Near Me</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="section-padding impact-section">
+        <div class="container">
+            <h2 class="section-title">Our Community Impact</h2>
+            <p class="section-subtitle">Together, we're making fashion more sustainable and supporting our communities</p>
+            
+            <div class="impact-stats">
+                <div class="impact-card">
+                    <div class="impact-icon"><i class="fas fa-leaf"></i></div>
+                    <div class="impact-number">8,450 kg</div>
+                    <h3>CO2 Saved</h3>
+                    <p>Equivalent to planting 200 trees</p>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon"><i class="fas fa-tint"></i></div>
+                    <div class="impact-number">28M L</div>
+                    <h3>Water Conserved</h3>
+                    <p>Enough to fill 11 Olympic pools</p>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon"><i class="fas fa-hands"></i></div>
+                    <div class="impact-number">1,240</div>
+                    <h3>People Helped</h3>
+                    <p>Through donations to local NGOs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">
+                        <i class="fas fa-recycle"></i> Sustainable Swap
+                    </a>
+                    <p>Redefining fashion through sustainable swapping, buying, selling, and donating. Join our community to reduce waste and support circular fashion.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Platform</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Browse Items</a></li>
+                        <li><a href="#">Start Swapping</a></li>
+                        <li><a href="#">Donate to NGOs</a></li>
+                        <li><a href="#">Sustainability Impact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Swap Guidelines</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">NGO Partnerships</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2023 Sustainable Swap. All rights reserved. Making fashion circular, one swap at a time.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.add('active');
+        });
+        
+        closeMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+            });
+        });
+        
+        // Filter buttons interaction
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // In a real implementation, this would filter the product grid
+                // For this demo, we'll just show a simple alert
+                if(btn.textContent !== 'All') {
+                    alert(`Filtering by: ${btn.textContent}\n\nIn a full implementation, this would filter the product listings.`);
+                }
+            });
+        });
+        
+        // Action buttons interaction
+        const actionIcons = document.querySelectorAll('.action-icon');
+        actionIcons.forEach(icon => {
+            icon.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const iconClass = icon.querySelector('i').className;
+                
+                if(iconClass.includes('fa-heart')) {
+                    if(iconClass.includes('far')) {
+                        icon.querySelector('i').className = 'fas fa-heart';
+                        icon.style.color = 'var(--donation-red)';
+                        icon.style.backgroundColor = 'rgba(255, 107, 107, 0.1)';
+                    } else {
+                        icon.querySelector('i').className = 'far fa-heart';
+                        icon.style.color = '';
+                        icon.style.backgroundColor = '';
+                    }
+                } else if(iconClass.includes('fa-exchange-alt')) {
+                    alert('Swap request initiated! In a full implementation, this would open the swap request page.');
+                } else if(iconClass.includes('fa-shopping-cart')) {
+                    alert('Item added to cart!');
+                } else if(iconClass.includes('fa-info-circle')) {
+                    alert('Donation details: This item is marked for donation to local NGOs. Click the heart icon to begin the donation process.');
+                }
+            });
+        });
+        
+        // Donation CTA button
+        const donateBtn = document.querySelector('.btn-donate');
+        if(donateBtn) {
+            donateBtn.addEventListener('click', () => {
+                alert('Starting donation process... In a full implementation, this would open the donation flow.');
+            });
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
