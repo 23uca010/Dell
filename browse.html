@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Listings | Sustainable Swap</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Same Header as index.html -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-recycle logo-icon"></i>
+                Sustainable Swap
+            </a>
+            
+            <nav class="nav-links">
+                <a href="index.html"><i class="fas fa-home nav-icon"></i> Home</a>
+                <a href="browse.html" class="active"><i class="fas fa-shopping-bag nav-icon"></i> Shop</a>
+                <a href="browse.html?type=swap"><i class="fas fa-exchange-alt nav-icon"></i> Swap</a>
+                <a href="donate.html"><i class="fas fa-heart nav-icon"></i> Donate</a>
+                <a href="dashboard.html"><i class="fas fa-user nav-icon"></i> Profile</a>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="search-bar">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Search for items, brands, or categories..." id="searchInput">
+                </div>
+                
+                <div class="user-actions">
+                    <button class="action-btn" id="wishlistBtn">
+                        <i class="far fa-heart"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <button class="action-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="notification-badge">2</span>
+                    </button>
+                    <button class="action-btn" id="notificationsBtn">
+                        <i class="far fa-bell"></i>
+                        <span class="notification-badge">5</span>
+                    </button>
+                    <button class="action-btn" id="userMenuBtn">
+                        <i class="far fa-user"></i>
+                    </button>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation (same as index.html) -->
+    <div class="mobile-nav" id="mobileNav">
+        <!-- Same mobile nav as index.html -->
+    </div>
+
+    <!-- Login Modal (same as index.html) -->
+    <div class="modal" id="loginModal">
+        <!-- Same login modal as index.html -->
+    </div>
+
+    <!-- Browse Content -->
+    <div class="container page-with-sidebar">
+        <!-- Filters Sidebar -->
+        <aside class="sidebar">
+            <div class="filter-section">
+                <h3>Category</h3>
+                <div class="filter-options">
+                    <div class="filter-option">
+                        <input type="checkbox" id="category-tops" checked>
+                        <label for="category-tops">Tops</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="category-bottoms">
+                        <label for="category-bottoms">Bottoms</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="category-dresses">
+                        <label for="category-dresses">Dresses</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="category-outerwear">
+                        <label for="category-outerwear">Outerwear</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="category-shoes">
+                        <label for="category-shoes">Shoes</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="category-accessories">
+                        <label for="category-accessories">Accessories</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Transaction Type</h3>
+                <div class="filter-options">
+                    <div class="filter-option">
+                        <input type="checkbox" id="type-swap" checked>
+                        <label for="type-swap">Swap</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="type-buy" checked>
+                        <label for="type-buy">Buy</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="type-donate">
+                        <label for="type-donate">Donate</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Size</h3>
+                <div class="size-grid">
+                    <div class="size-option">XS</div>
+                    <div class="size-option selected">S</div>
+                    <div class="size-option">M</div>
+                    <div class="size-option">L</div>
+                    <div class="size-option">XL</div>
+                    <div class="size-option">XXL</div>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Condition</h3>
+                <div class="filter-options">
+                    <div class="filter-option">
+                        <input type="checkbox" id="condition-new">
+                        <label for="condition-new">New</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="condition-like-new" checked>
+                        <label for="condition-like-new">Like New</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="condition-good" checked>
+                        <label for="condition-good">Good</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="condition-fair">
+                        <label for="condition-fair">Fair</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Brand</h3>
+                <div class="filter-options">
+                    <div class="filter-option">
+                        <input type="checkbox" id="brand-zara">
+                        <label for="brand-zara">Zara</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="brand-hm">
+                        <label for="brand-hm">H&M</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="brand-levis">
+                        <label for="brand-levis">Levi's</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="brand-nike">
+                        <label for="brand-nike">Nike</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="brand-other">
+                        <label for="brand-other">Other</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Price Range</h3>
+                <div class="price-range">
+                    <input type="range" min="0" max="200" value="100" class="price-slider">
+                    <div class="price-inputs">
+                        <input type="number" min="0" max="200" value="0" placeholder="Min">
+                        <input type="number" min="0" max="200" value="200" placeholder="Max">
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Sustainability</h3>
+                <div class="filter-options">
+                    <div class="filter-option">
+                        <input type="checkbox" id="sustainable-organic">
+                        <label for="sustainable-organic">Organic Materials</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="sustainable-recycled">
+                        <label for="sustainable-recycled">Recycled Materials</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="sustainable-ethical">
+                        <label for="sustainable-ethical">Ethically Made</label>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary btn-full" id="applyFilters">Apply Filters</button>
+            <button class="btn btn-outline btn-full mt-2" id="clearFilters">Clear All</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="browse-header">
+                <h1>Browse Listings</h1>
+                <div class="sort-options">
+                    <span>Sort by:</span>
+                    <select class="sort-select" id="sortSelect">
+                        <option value="newest">Newest First</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="condition">Best Condition</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="product-grid" id="browseProducts">
+                <!-- Products loaded by JavaScript -->
+            </div>
+
+            <div class="text-center mt-4">
+                <button class="btn btn-outline" id="loadMore">
+                    <i class="fas fa-redo"></i> Load More Items
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer (same as index.html) -->
+    <footer>
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Sustainable Swap</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Same Header -->
+
+    <!-- Product Detail Content -->
+    <div class="container product-detail">
+        <div class="product-container">
+            <!-- Product Gallery -->
+            <div class="product-gallery">
+                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                     alt="Denim Jacket" class="main-image" id="mainImage">
+                <div class="thumbnail-images">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Denim Jacket Front" class="thumbnail active" data-image="mainImage">
+                    <img src="https://images.unsplash.com/photo-1521223890158-f9f7c3d5d504?ixlib=rb-4.0.3&auto=format&fit=crop&w=2066&q=80" 
+                         alt="Denim Jacket Back" class="thumbnail" data-image="mainImage">
+                    <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Denim Jacket Detail" class="thumbnail" data-image="mainImage">
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="product-info-detail">
+                <div class="product-badge badge-swap">Swap</div>
+                <div class="product-category">Outerwear • Denim Jackets</div>
+                <h1 class="product-title-detail">Vintage Denim Jacket</h1>
+                
+                <div class="seller-info">
+                    <div class="meta-item">
+                        <span class="meta-label">Seller:</span>
+                        <span>Sarah Johnson</span>
+                        <span class="rating">⭐ 4.8 (124 reviews)</span>
+                    </div>
+                </div>
+
+                <div class="product-price-detail">$45.00</div>
+                <div class="product-meta-detail">
+                    <div class="meta-item">
+                        <span class="meta-label">Size:</span>
+                        <span>Medium (M)</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Condition:</span>
+                        <span>Good (7/10)</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Brand:</span>
+                        <span>Levi's</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Color:</span>
+                        <span>Light Blue</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Material:</span>
+                        <span>100% Cotton Denim</span>
+                    </div>
+                </div>
+
+                <div class="product-description">
+                    <p>A classic vintage denim jacket with subtle distressing details. Perfect for layering over any outfit. This jacket has been gently worn but is in excellent condition with no stains or tears.</p>
+                    <p><strong>Features:</strong></p>
+                    <ul>
+                        <li>Classic trucker jacket style</li>
+                        <li>Button-front closure</li>
+                        <li>Two front pockets</li>
+                        <li>Slight distressing on elbows</li>
+                        <li>Made from sustainable cotton</li>
+                    </ul>
+                </div>
+
+                <div class="sustainability-impact">
+                    <h3><i class="fas fa-leaf"></i> Sustainability Impact</h3>
+                    <p>By choosing this pre-loved item, you're saving approximately:</p>
+                    <div class="impact-stats">
+                        <div class="impact-card">
+                            <div class="impact-number">2,700L</div>
+                            <h4>Water Saved</h4>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-number">5.5kg</div>
+                            <h4>CO2 Prevented</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="addToCart">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                    <button class="btn btn-secondary" id="requestSwap">
+                        <i class="fas fa-exchange-alt"></i> Request Swap
+                    </button>
+                    <button class="btn btn-outline" id="addToWishlist">
+                        <i class="far fa-heart"></i> Save for Later
+                    </button>
+                    <button class="btn btn-donate" id="suggestDonation">
+                        <i class="fas fa-heart"></i> Suggest Donation
+                    </button>
+                </div>
+
+                <div class="shipping-info mt-3">
+                    <p><i class="fas fa-truck"></i> Free shipping within US • Returns accepted within 14 days</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Tabs -->
+        <div class="product-tabs">
+            <div class="tabs">
+                <button class="tab active" data-tab="description">Description & Care</button>
+                <button class="tab" data-tab="seller">Seller Profile</button>
+                <button class="tab" data-tab="reviews">Reviews (24)</button>
+                <button class="tab" data-tab="swap">Swap History</button>
+            </div>
+
+            <div class="tab-content">
+                <div id="description" class="tab-pane active">
+                    <h3>Product Details</h3>
+                    <p>This vintage Levi's denim jacket is a timeless piece that gets better with age. Made from 100% cotton denim, it features the classic trucker jacket design with button-front closure, two chest pockets, and adjustable cuffs.</p>
+                    
+                    <h3>Care Instructions</h3>
+                    <ul>
+                        <li>Machine wash cold with similar colors</li>
+                        <li>Tumble dry low or air dry</li>
+                        <li>Iron on low heat if needed</li>
+                        <li>Do not bleach</li>
+                    </ul>
+                </div>
+
+                <div id="seller" class="tab-pane hidden">
+                    <div class="seller-profile">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson" class="user-avatar">
+                        <h3>Sarah Johnson</h3>
+                        <p>Member since 2021 • 42 successful swaps</p>
+                        <div class="seller-stats">
+                            <div class="stat-card">
+                                <div class="stat-number">4.8</div>
+                                <div class="stat-label">Average Rating</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">98%</div>
+                                <div class="stat-label">Swap Success Rate</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">24</div>
+                                <div class="stat-label">Items Listed</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="reviews" class="tab-pane hidden">
+                    <!-- Reviews content -->
+                </div>
+
+                <div id="swap" class="tab-pane hidden">
+                    <!-- Swap history content -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -449,13 +449,85 @@
             z-index: 2;
         }
 
-        .badge-swap {
-            background-color: var(--primary-green);
-        }
+        .swap-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+.swap-content {
+  background: var(--white);
+  margin: 5% auto;
+  max-width: 600px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+.swap-header {
+  padding: 25px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.swap-body {
+  padding: 25px;
+}
+.swap-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+.swap-product-mini {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.swap-product-mini:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+.swap-product-mini img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+.swap-product-mini-info {
+  padding: 10px;
+  font-size: 0.85rem;
+}
+.swap-message {
+  width: 100%;
+  height: 100px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  resize: vertical;
+  font-family: inherit;
+}
+.swap-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(20px); } to { transform: translateY(0); } }
+@media (max-width: 768px) {
+  .swap-content { margin: 10% 20px; width: calc(100% - 40px); }
+}[file:2]
 
-        .badge-buy {
-            background-color: var(--accent-coral);
-        }
 
         .badge-donate {
             background-color: var(--donation-red);
@@ -526,49 +598,109 @@
             color: white;
         }
 
-        /* Donation Section */
-        .donation-section {
-            background-color: var(--light-green);
-        }
-
-        .donation-steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        @media (max-width: 768px) {
-            .donation-steps {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .donation-step {
-            background-color: var(--white);
-            border-radius: var(--radius);
-            padding: 30px;
-            text-align: center;
-            box-shadow: var(--shadow);
-        }
-
-        .donation-icon {
-            font-size: 2.5rem;
-            color: var(--donation-red);
-            margin-bottom: 20px;
-        }
-
-        .ngo-map {
-            height: 300px;
-            background-color: #f0f0f0;
-            border-radius: var(--radius);
-            margin-top: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--light-gray);
-            font-weight: 600;
-        }
+       .donate-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+.donate-content {
+  background: var(--white);
+  margin: 5% auto;
+  max-width: 500px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+.donate-header {
+  padding: 25px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--light-green);
+}
+.donate-body {
+  padding: 25px;
+}
+.ngo-list {
+  max-height: 300px;
+  overflow-y: auto;
+  margin: 20px 0;
+}
+.ngo-item {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.ngo-item:hover, .ngo-item.selected {
+  border-color: var(--donation-red);
+  background: rgba(255,107,107,0.05);
+}
+.ngo-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.ngo-details h4 {
+  margin: 0 0 5px 0;
+  color: var(--dark-gray);
+}
+.ngo-location {
+  font-size: 0.85rem;
+  color: var(--light-gray);
+}
+.schedule-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+.schedule-btn {
+  padding: 12px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: var(--transition);
+}
+.schedule-btn:hover {
+  border-color: var(--primary-green);
+}
+.donate-notes {
+  width: 100%;
+  height: 80px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  resize: vertical;
+}
+.donate-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(20px); } to { transform: translateY(0); } }
+@media (max-width: 768px) {
+  .donate-content { margin: 10% 20px; width: calc(100% - 40px); }
+}[file:2]
 
         /* Impact Section */
         .impact-section {
@@ -802,9 +934,9 @@
             
             <nav class="nav-links">
                 <a href="#" class="active"><i class="fas fa-home nav-icon"></i> Home</a>
-                <a href=""><i class="fas fa-shopping-bag nav-icon"></i> Shop</a>
-                <a href="#"><i class="fas fa-exchange-alt nav-icon"></i> Swap</a>
-                <a href="#"><i class="fas fa-heart nav-icon"></i> Donate</a>
+                <a href="browse.html"><i class="fas fa-shopping-bag nav-icon"></i> Shop</a>
+                <a href="product-detail.html"><i class="fas fa-exchange-alt nav-icon"></i> Swap</a>
+                <a href="cart.html"><i class="fas fa-heart nav-icon"></i> Donate</a>
                 <a href="#"><i class="fas fa-user nav-icon"></i> Profile</a>
             </nav>
             
